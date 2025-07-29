@@ -44,7 +44,7 @@ const Footer = () => {
 
             {/* Bottom Note */}
             <div className="text-center text-sm text-gray-500 mt-8">
-                &copy; {new Date().getFullYear()} Athena. All rights reserved.
+                &copy; {new Date().getFullYear()} Athena <span className="text-orange-600 -ml-2">.</span> All rights reserved.
             </div>
         </footer>
     );

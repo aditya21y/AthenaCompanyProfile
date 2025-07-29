@@ -27,15 +27,15 @@ const Header = () => {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col md:flex-row items-center gap-8 mt-8">
-                        <button className="flex gap-2 rounded-full px-6 py-2.5 
-                        bg-black text-white transition duration-300 cursor-pointer">
-                            <a href="">Start Your ERP Project</a>
-                            <Image src={assets.right_arrow_white} alt="" className="w-6" />
-                        </button>
                         <button className="flex gap-2 rounded-full px-6 py-2.5 border border-gray-500 
                         bg-white/50 text-black transition duration-300 cursor-pointer">
                             <a href="">Contact Us For More information</a>
                             {/* <Image src={assets.download_icon} alt="" className="w-6" /> */}
+                        </button>
+                        <button className="flex gap-2 rounded-full px-6 py-2.5 
+                        bg-black text-white transition duration-300 cursor-pointer">
+                            <a href="">Start Your ERP Project</a>
+                            <Image src={assets.right_arrow_white} alt="" className="w-6" />
                         </button>
                     </div>
                 </div>
