@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 {/* Logo / Brand */}
                 <div className="text-center md:text-left">
-                    <h3 className="text-2xl font-bold">Athena</h3>
+                    <h3 className="text-2xl font-bold">Athena<span className="text-orange-600">.</span></h3>
                     <p className="text-sm text-gray-400 mt-1">
                         Empowering businesses with ERPNext solutions.
                     </p>
@@ -43,8 +43,8 @@ const Footer = () => {
             </div>
 
             {/* Bottom Note */}
-            <div className="text-center text-sm text-gray-500 mt-8">
-                &copy; {new Date().getFullYear()} Athena <span className="text-orange-600 -ml-2">.</span> All rights reserved.
+            <div className="text-center text-sm text-gray-500">
+                &copy; {new Date().getFullYear()}Athena<span className="text-orange-600">.</span> All rights reserved.
             </div>
         </footer>
     );

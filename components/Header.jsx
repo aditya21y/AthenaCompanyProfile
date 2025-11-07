@@ -13,14 +13,14 @@ const Header = () => {
                 {/* <div className="fixed top-0 right-0 -z-10 w-11/12 bg-white">
                     <Image src={assets.header_bg_color} alt="" className="w-full" />
                 </div> */}
-                <div className="animate-floating -z-50">
+                <div>
                     <Image src={assets.profile_img} className="hidden lg:block" alt="" />
                 </div>
                 <div>
                     <h3 className={`text-gray-500 text-2xl text-center lg:text-2xl lg:font-semibold lg:text-left ${ovo.className}`}>
                         ERP Software House
                     </h3>
-                    <h1 className="text-gray-800 text-4xl font-bold leading-tight antialiased text-center md:antialiased md:leading-tight md:text-5xl">
+                    <h1 className="text-gray-800 text-4xl font-bold leading-tight antialiased text-center md:antialiased md:leading-tight md:text-5xl md:text-left">
                         Build Smarter ERP Systems with Athena <span className="text-orange-600 -ml-2">.</span>
                     </h1>
                     <p className={`text-gray-600 text-center text-lg max-w-3xl mt-2 ${ovo.className} antialiased leading-8 md:text-left`}>
