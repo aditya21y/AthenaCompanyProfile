@@ -3,11 +3,11 @@ import ovo from "@/components/utils"; // Importing the Ovo font
 const Contact = () => {
     return (
         <div id="contact" className="w-full px-[10%] py-24 bg-gray-50 scroll-mt-20 rounded-2xl">
-            <h4 className={`text-2xl text-center text-gray-500 mb-2 ${ovo.className}`}>Get in Touch</h4>
+            <h4 className={`text-2xl text-center text-gray-500 mb-2`}>Get in Touch</h4>
             <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Contact Us</h2>
 
             <div className="max-w-5xl mx-auto text-center mb-16">
-                <p className={`text-lg text-gray-600 leading-relaxed ${ovo.className}`}>
+                <p className={`text-lg text-gray-600 leading-relaxed`}>
                     We would love to hear from you! Whether you have a question about our services, need assistance, or just want to say hello, feel free to reach out.
                 </p>
             </div>

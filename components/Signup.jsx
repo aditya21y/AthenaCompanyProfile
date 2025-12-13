@@ -94,7 +94,7 @@ export default function SignupPage() {
             <div className="w-full max-w-md bg-white shadow-xl rounded-xl p-8">
 
                 <h2 className="text-3xl font-bold text-gray-800 mb-2">Create Account</h2>
-                <p className={`text-gray-600 mb-6 ${ovo.className}`}>
+                <p className={`text-gray-600 mb-6`}>
                     Sign up to start using the ERP App
                 </p>
 

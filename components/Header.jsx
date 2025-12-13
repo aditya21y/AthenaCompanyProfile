@@ -107,7 +107,7 @@ const Header = () => {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="ml-10"
                     >
-                        <h3 className={`text-gray-200 text-3xl font-semibold ${ovo.className}`}>
+                        <h3 className={`text-gray-200 text-3xl font-semibold`}>
                             {current.tag}
                         </h3>
 
@@ -116,7 +116,7 @@ const Header = () => {
                         </h1>
 
                         <p
-                            className={`text-gray-200 text-2xl max-w-4xl mt-4 leading-8 ${ovo.className}`}
+                            className={`text-gray-200 text-2xl max-w-4xl mt-4 leading-8`}
                         >
                             {current.desc}
                         </p>

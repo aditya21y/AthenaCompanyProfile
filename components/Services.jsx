@@ -5,11 +5,11 @@ import ovo from "@/components/utils"; // pakai Ovo font biar konsisten
 const Services = () => {
     return (
         <div id="services" className="w-full px-[10%] py-24 scroll-mt-20 bg-white rounded-2xl">
-            <h4 className={`${ovo.className} text-2xl text-center text-gray-500 mb-2`}>Our Services</h4>
+            <h4 className={`text-2xl text-center text-gray-500 mb-2`}>Our Services</h4>
             <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">What We Offer</h2>
 
             <div className="max-w-5xl mx-auto text-center mb-16">
-                <p className={`${ovo.className} text-lg text-gray-600 leading-relaxed`}>
+                <p className={`text-lg text-gray-600 leading-relaxed`}>
                     At Athena, we specialize in providing comprehensive ERPNext solutions tailored to your business needs. Our services include:
                 </p>
             </div>
@@ -57,7 +57,7 @@ const ServiceCard = (props) => {
             <div className="flex flex-col items-center">
                 {icon}
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                <p className={`${ovo.className} text-gray-600`}>{desc}</p>
+                <p className={`text-gray-600`}>{desc}</p>
             </div>
         </div>
     );
