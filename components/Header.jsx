@@ -1,50 +1,126 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { assets } from "@/assets/assets";
-import ovo from "@/components/utils"; // Importing the Ovo font
+import ovo from "@/components/utils";
 import { useRouter } from "next/navigation";
 import goToLogin from "@/router/routerHandler";
 
 const Header = () => {
     const router = useRouter();
+
     return (
-        <>
-            <div className=" gap-10 py-50 md:flex md:gap-20 md:py-50 md:items-center md:px-[12%]">
-                {/* <div className="fixed top-0 right-0 -z-10 w-11/12 bg-white">
-                    <Image src={assets.header_bg_color} alt="" className="w-full" />
-                </div> */}
+        <div className="relative min-h-screen overflow-hidden z-0">
+            {/* Background Video */}
+            <video
+                className="absolute inset-0 w-full h-full object-cover -z-10 pointer-events-none"
+                autoPlay
+                loop
+                muted
+                playsInline
+            >
+                <source src="/hero-bg.mp4" type="video/mp4" />
+            </video>
+
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/50 -z-10 pointer-events-none"></div>
+
+            {/* Content */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="
+                    min-h-screen
+                    flex
+                    items-center
+                    md:px-[12%]
+                    gap-10
+                    md:gap-20
+                    relative
+                    z-10
+                "
+            >
+                {/* Image */}
+                <motion.div
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="hidden lg:block"
+                >
+                    <Image src={assets.profile_img_light} alt="Athena" />
+                </motion.div>
+
+                {/* Text */}
                 <div>
-                    <Image src={assets.profile_img} className="hidden lg:block" alt="" />
-                </div>
-                <div>
-                    <h3 className={`text-gray-500 text-2xl text-center lg:text-2xl lg:font-semibold lg:text-left ${ovo.className}`}>
+                    <motion.h3
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className={`text-gray-200 text-2xl font-semibold ${ovo.className}`}
+                    >
                         ERP Software House
-                    </h3>
-                    <h1 className="text-gray-800 text-4xl font-bold leading-tight antialiased text-center md:antialiased md:leading-tight md:text-5xl md:text-left">
-                        Build Smarter ERP Systems with Athena <span className="text-orange-600 -ml-2">.</span>
-                    </h1>
-                    <p className={`text-gray-600 text-center text-lg max-w-3xl mt-2 ${ovo.className} antialiased leading-8 md:text-left`}>
-                        We specialize in ERP development — from custom module creation, workflow creation, to full system implementation.
-                        Athena helps companies streamline operations and scale efficiently with open-source ERP technology.
-                    </p>
+                    </motion.h3>
 
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col md:flex-row items-center gap-8 mt-8">
-                        <button className="flex gap-2 rounded-full px-6 py-2.5 border border-gray-500 
-                        bg-white/50 text-black transition duration-300 cursor-pointer">
-                            <a href="#">Follow Our Social Media For Mor Info</a>
-                            {/* <Image src={assets.download_icon} alt="" className="w-6" /> */}
+                    <motion.h1
+                        initial={{ opacity: 0, y: 25 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className="text-white text-4xl md:text-5xl font-bold leading-tight"
+                    >
+                        Build Smarter ERP Systems with Athena
+                        <span className="text-orange-500">.</span>
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 25 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        className={`text-gray-200 text-lg max-w-3xl mt-4 leading-8 ${ovo.className}`}
+                    >
+                        We specialize in ERP development — from custom module creation,
+                        workflow creation, to full system implementation.
+                        Athena helps companies streamline operations and scale efficiently
+                        with open-source ERP technology.
+                    </motion.p>
+
+                    {/* CTA */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        className="flex flex-col md:flex-row items-center gap-6 mt-8"
+                    >
+                        <button className="
+                            rounded-full px-6 py-2.5
+                            border border-white/60
+                            text-white
+                            bg-white/10
+                            backdrop-blur
+                            cursor-pointer
+                        ">
+                            Follow Our Social Media
                         </button>
-                        <button className="flex gap-2 rounded-full px-6 py-2.5 
-                        bg-black text-white transition duration-300 cursor-pointer" onClick={() => goToLogin(router)}>
+
+                        <button
+                            onClick={() => goToLogin(router)}
+                            className="
+                                flex items-center gap-2
+                                rounded-full px-6 py-2.5
+                                bg-orange-600 text-white
+                                hover:bg-orange-700 transition
+                                cursor-pointer
+                            "
+                        >
                             Start Your ERP Project
-                            <Image src={assets.right_arrow_white} alt="" className="w-6" />
+                            <Image src={assets.right_arrow_white} alt="" className="w-5" />
                         </button>
-                    </div>
+                    </motion.div>
                 </div>
-
-            </div>
-        </>
+            </motion.div>
+        </div>
     );
 };
 
