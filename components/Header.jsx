@@ -50,7 +50,7 @@ const Header = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="hidden lg:block"
                 >
-                    <Image src={assets.profile_img_light} alt="Athena" />
+                    <Image src={assets.profile_img_light} alt="Athena" hidden:true />
                 </motion.div>
 
                 {/* Text */}
