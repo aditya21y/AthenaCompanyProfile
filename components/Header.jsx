@@ -48,7 +48,7 @@ const Header = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prev) => (prev + 1) % slides.length);
-        }, 6000);
+        }, 8000);
 
         return () => clearInterval(interval);
     }, []);
@@ -82,8 +82,8 @@ const Header = () => {
                     hidden md:flex
                     flex-shrink-0
                     w-[180px]
-                    lg:w-[500px]
-                    xl:w-[500px]
+                    lg:w-[530px]
+                    xl:w-[530px]
                 "
                 >
                     <Image
@@ -105,17 +105,18 @@ const Header = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -30 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="ml-10"
                     >
-                        <h3 className={`text-gray-200 text-xl font-semibold ${ovo.className}`}>
+                        <h3 className={`text-gray-200 text-3xl font-semibold ${ovo.className}`}>
                             {current.tag}
                         </h3>
 
-                        <h1 className="text-white text-4xl md:text-5xl font-bold leading-tight mt-2">
+                        <h1 className="text-white text-5xl md:text-6xl font-bold leading-tight mt-2">
                             {current.title}
                         </h1>
 
                         <p
-                            className={`text-gray-200 text-lg max-w-3xl mt-4 leading-8 ${ovo.className}`}
+                            className={`text-gray-200 text-2xl max-w-4xl mt-4 leading-8 ${ovo.className}`}
                         >
                             {current.desc}
                         </p>
