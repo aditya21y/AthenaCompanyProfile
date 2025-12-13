@@ -48,9 +48,18 @@ const Header = () => {
                     initial={{ opacity: 0, x: -40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="hidden lg:block"
+                    className="
+                    hidden
+                    md:block
+                    w-40
+                    lg:w-150
+                    xl:w-150"
                 >
-                    <Image src={assets.profile_img_light} alt="Athena" hidden:true />
+                    <Image
+                        src={assets.profile_img_light}
+                        alt="Athena"
+                        className="w-full h-auto"
+                    />
                 </motion.div>
 
                 {/* Text */}
