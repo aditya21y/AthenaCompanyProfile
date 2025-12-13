@@ -1,17 +1,11 @@
-import React, { useRef, useEffect } from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
-import ovo from "@/components/utils";
 
 const Navbar = () => {
-
-    const sideMenu = useRef();
-    const openMenu = () => {
-        sideMenu.current.style.transform = "translateX(-16rem)";
-    }
-    const closeMenu = () => {
-        sideMenu.current.style.transform = "translateX(16rem)";
-    }
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -26,16 +20,10 @@ const Navbar = () => {
                 }
             }
 
-            // Update active class
-            document.querySelectorAll("nav a").forEach((a) => {
+            document.querySelectorAll("nav a[data-link]").forEach((a) => {
                 const href = a.getAttribute("href")?.replace("#", "");
-                if (href === current) {
-                    a.classList.add("text-black");
-                    a.classList.remove("text-gray-500");
-                } else {
-                    a.classList.remove("text-black");
-                    a.classList.add("text-gray-500");
-                }
+                a.classList.toggle("text-black", href === current);
+                a.classList.toggle("text-gray-500", href !== current);
             });
         };
 
@@ -44,47 +32,63 @@ const Navbar = () => {
     }, []);
 
     return (
-        <>
-            <nav className="w-full fixed flex justify-between px-5 py-3 lg:px-8 xl:px-[8%] items-center bg-white/85 z-50">
-                <a href="">
-                    <Image src={assets.logo} alt=""
-                        className="w-28 cursor-pointer mr-14"
-                    />
-                </a>
-                <ul className="hidden lg:flex items-center gap-8 lg:gap-8
-                rounded-full px-12 py-3 bg-white/50 shadow-sm my-2">
-                    <li><a className="text-bold hover:text-black" href="#top">Home</a></li>
-                    <li><a className="text-bold hover:text-black" href="#about">About Me</a></li>
-                    <li><a className="text-bold hover:text-black" href="#services">Services</a></li>
-                    <li><a className="text-bold hover:text-black" href="#contact">Contact</a></li>
-                </ul>
-                <div className="flex items-center gap-4">
-                    <button>
-                        <Image src={assets.moon_icon} alt="" className="w-6 cursor-pointer"></Image>
-                    </button>
+        <nav className="fixed w-full z-50 bg-white/85 backdrop-blur px-6 xl:px-[8%] py-3 flex items-center">
+            {/* LOGO */}
+            <Image
+                src={assets.logo}
+                alt="logo"
+                className="w-28 cursor-pointer shrink-0"
+            />
 
-                    <a href="#contact" className={`hidden lg:flex items-center gap-2 px-5
-                    py-2.5 border border-gray-500 rounded-full ml-4 text-black `}>Contact
-                        <Image src={assets.arrow_icon} className="w-3" alt="" />
-                    </a>
-                    <button className="block lg:hidden cursor-pointer " onClick={openMenu}>
-                        <Image src={assets.menu_black} alt="" className="w-6"></Image>
-                    </button>
+            {/* SPACER */}
+            <div className="flex-1" />
+
+            {/* COLLAPSIBLE AREA */}
+            <div
+                className={`
+                    overflow-hidden transition-all duration-500 ease-in-out
+                    ${open ? "max-w-[900px] opacity-100" : "max-w-0 opacity-0"}
+                `}
+            >
+                <div className="flex items-center gap-6 bg-white/60 rounded-full px-10 py-3 shadow-sm">
+                    {/* MENU */}
+                    <ul className="flex items-center gap-8">
+                        <li><a data-link href="#top" className="text-gray-500 hover:text-black">Home</a></li>
+                        <li><a data-link href="#about" className="text-gray-500 hover:text-black">About</a></li>
+                        <li><a data-link href="#services" className="text-gray-500 hover:text-black">Services</a></li>
+                        <li><a data-link href="#contact" className="text-gray-500 hover:text-black">Contact</a></li>
+                    </ul>
+
+                    {/* RIGHT ACTION (MASUK KE DALAM) */}
+                    <div className="flex items-center gap-4 pl-6 border-l border-gray-300">
+                        <button>
+                            <Image src={assets.moon_icon} alt="" className="w-6" />
+                        </button>
+
+                        <a
+                            href="#contact"
+                            className="flex items-center gap-2 px-5 py-2.5 border border-gray-400 rounded-full"
+                        >
+                            Contact
+                            <Image src={assets.arrow_icon} alt="" className="w-3" />
+                        </a>
+                    </div>
                 </div>
+            </div>
 
-                {/* {mobile menu} */}
-                <ul ref={sideMenu} className="flex flex-col md:flex-col gap-4 py-20 px-10 fixed -right-64 
-                top-0 bottom-0 w-64 z-50 bg-white shadow-md transition duration-500">
-                    <button className="absolute right-6 top-6 cursor-pointer" onClick={closeMenu}>
-                        <Image src={assets.close_black} alt="" className="w-6"></Image>
-                    </button>
-                    <li><a onClick={closeMenu} className="text-gray-500 hover:text-black" href="#top">Home</a></li>
-                    <li><a onClick={closeMenu} className="text-gray-500 hover:text-black" href="#about">About Me</a></li>
-                    <li><a onClick={closeMenu} className="text-gray-500 hover:text-black" href="#services">Services</a></li>
-                    <li><a onClick={closeMenu} className="text-gray-500 hover:text-black" href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </>
+            {/* HAMBURGER – UJUNG KANAN */}
+            <button
+                onClick={() => setOpen(!open)}
+                className="ml-4 p-2 hover:bg-gray-100 rounded-md transition"
+            >
+                <Image
+                    src={assets.menu_black}
+                    alt="menu"
+                    className="w-6"
+                />
+            </button>
+        </nav>
     );
-}
+};
+
 export default Navbar;
