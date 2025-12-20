@@ -5,7 +5,7 @@ import Image from "next/image";
 import { assets } from "@/assets/assets";
 
 const Navbar = () => {
-    const [openDesktop, setOpenDesktop] = useState(false);
+    const [openDesktop, setOpenDesktop] = useState(true);
     const [openMobile, setOpenMobile] = useState(false);
 
     useEffect(() => {

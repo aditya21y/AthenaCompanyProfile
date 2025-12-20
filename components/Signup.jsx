@@ -19,7 +19,7 @@ export default function SignupPage() {
         setLoading(true);
 
         try {
-            const res = await fetch("http://localhost:8000/api/method/athena.athena.addon.signup.signup", {
+            const res = await fetch("http://202.10.48.104/api/method/athena.athena.addon.signup.signup", {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
