@@ -7,12 +7,13 @@ import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import { assets } from "@/assets/assets";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={assets.sun_icon} />
       </Head>
       <Navbar />
       <Header />

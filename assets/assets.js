@@ -36,11 +36,15 @@ import right_arrow from './right-arrow.png';
 import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
+import new_logo_dark from './new_logo_dark.png';
+import new_logo_light from './new_logo_light.png';
 
 export const assets = {
     user_image,
     code_icon,
     code_icon_dark,
+    new_logo_dark,
+    new_logo_light,
     edu_icon,
     edu_icon_dark,
     project_icon,

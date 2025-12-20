@@ -7,3 +7,13 @@ services:
     ports:
       - "3000:3000"
     restart: unless-stopped
+
+    # Load env file (WAJIB ADA)
+    env_file:
+      - .env.production
+
+    # Prevent VPS OOM
+    deploy:
+      resources:
+        limits:
+          memory: 512M

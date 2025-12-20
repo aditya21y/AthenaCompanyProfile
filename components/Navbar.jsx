@@ -38,9 +38,9 @@ const Navbar = () => {
             <nav className="fixed w-full z-50 bg-white/85 backdrop-blur px-6 xl:px-[8%] py-3 flex items-center">
                 {/* LOGO */}
                 <Image
-                    src={assets.logo}
+                    src={assets.new_logo_dark}
                     alt="logo"
-                    className="w-28 cursor-pointer shrink-0"
+                    className="w-36 cursor-pointer shrink-0"
                 />
 
                 {/* ================= DESKTOP MENU ================= */}
