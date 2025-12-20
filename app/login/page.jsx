@@ -14,7 +14,7 @@ export default async function Login() {
 
     // ✅ Cek apakah SID masih valid di ERPNext
     const res = await fetch(
-        "http://localhost:8000/api/method/frappe.auth.get_logged_user",
+        "http://http://202.10.48.104/api/method/frappe.auth.get_logged_user",
         {
             method: "GET",
             headers: {
@@ -26,7 +26,7 @@ export default async function Login() {
 
     // ✅ Jika SID valid → redirect ke ERPNext
     if (res.ok) {
-        redirect("http://localhost:8000/app/home");
+        redirect("http://http://202.10.48.104/app/home");
     }
 
     // ❌ Jika SID expired → tampilkan login page lagi
