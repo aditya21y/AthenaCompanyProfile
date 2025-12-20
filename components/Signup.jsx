@@ -59,7 +59,7 @@ export default function SignupPage() {
                 setSuccess("Account created! Redirecting...");
 
                 // ✅ Auto login
-                await fetch("http://localhost:8000/api/method/login", {
+                await fetch("http://202.10.48.104/api/method/login", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     credentials: "include",
@@ -69,7 +69,7 @@ export default function SignupPage() {
                     }),
                 });
 
-                window.location.href = "http://localhost:8000/app/home";
+                window.location.href = "http://202.10.48.104/app/home";
             } else {
                 setError(data.message?.message || "Signup failed");
             }

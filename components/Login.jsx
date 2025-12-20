@@ -16,7 +16,7 @@ const LoginPage = () => {
         setLoading(true);
 
         try {
-            const res = await fetch("http://localhost:8000/api/method/login", {
+            const res = await fetch("http://202.10.48.104/api/method/login", {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
@@ -41,7 +41,7 @@ const LoginPage = () => {
             }
 
             if (res.ok && data.message === "Logged In") {
-                window.location.href = "http://localhost:8000/app/home";
+                window.location.href = "http://202.10.48.104/app/home";
             } else {
                 setError(data.message || "Login failed");
             }
