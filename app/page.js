@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <link rel="icon" href={assets.sun_icon} />
+        <link rel="icon" href="/sun_icon.png" />
       </Head>
       <Navbar />
       <Header />

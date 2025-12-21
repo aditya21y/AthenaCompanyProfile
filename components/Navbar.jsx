@@ -23,7 +23,7 @@ const Navbar = () => {
 
             document.querySelectorAll("nav a[data-link]").forEach((a) => {
                 const href = a.getAttribute("href")?.replace("#", "");
-                a.classList.toggle("text-black", href === current);
+                a.classList.toggle("text-orange-600", href === current);
                 a.classList.toggle("text-gray-500", href !== current);
             });
         };

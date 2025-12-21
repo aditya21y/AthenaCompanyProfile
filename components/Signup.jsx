@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 import ovo from "@/components/utils";
+import Link from "next/link";
 
 export default function SignupPage() {
     const [email, setEmail] = useState("");
@@ -84,11 +85,15 @@ export default function SignupPage() {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4 py-12">
             {/* ✅ Brand Title */}
-            <div className="text-6xl font-bold mb-6">
-
-                <a href="/">
-                    Athena<span className="text-orange-600">.</span>
-                </a>
+            <div className="mb-6">
+                <Link href="/">
+                    <Image
+                        src={assets.new_logo_dark}
+                        alt="logo"
+                        className="w-50 cursor-pointer shrink-0"
+                        priority
+                    />
+                </Link>
             </div>
 
             <div className="w-full max-w-md bg-white shadow-xl rounded-xl p-8">
