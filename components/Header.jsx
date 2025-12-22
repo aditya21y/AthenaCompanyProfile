@@ -73,7 +73,7 @@ const Header = () => {
                 >
                     <motion.h1
                         variants={itemUp}
-                        className="text-white text-4xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl font-extrabold leading-tight"
+                        className="text-white text-4xl md:text-5xl lg:text-6xl lg:mt-1 xl:text-6xl xl:mt-1 2xl:text-7xl font-extrabold leading-tight"
                     >
                         <span className="text-orange-600">One System</span> <br />
                         Streamlined Processes <br />
