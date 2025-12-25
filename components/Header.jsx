@@ -64,16 +64,22 @@ const Header = () => {
             <div className="absolute inset-0 bg-black/60 -z-10" />
 
             {/* ================= HERO CONTENT ================= */}
-            <div className="relative z-10 min-h-screen flex items-center px-6 md:px-[12%]">
+            <div className="relative z-10 min-h-[85vh] lg:min-h-screen flex items-center px-6 md:px-[12%]">
                 <motion.div
                     variants={container}
                     initial="hidden"
                     animate="show"
                     className="max-w-5xl"
                 >
+                    {/* ===== HERO TITLE ===== */}
                     <motion.h1
                         variants={itemUp}
-                        className="text-white text-4xl md:text-5xl lg:text-6xl lg:mt-1 xl:text-6xl xl:mt-1 2xl:text-7xl font-extrabold leading-tight"
+                        className="
+                text-white
+                font-extrabold
+                leading-tight
+                text-[clamp(2.5rem,5vw,4.5rem)]
+            "
                     >
                         <span className="text-orange-600">One System</span> <br />
                         Streamlined Processes <br />
@@ -81,19 +87,35 @@ const Header = () => {
                         Better Business Decisions.
                     </motion.h1>
 
+                    {/* ===== HERO SUBTITLE ===== */}
                     <motion.p
                         variants={itemUp}
-                        className="text-gray-200 text-2xl md:text-3xl mt-8 max-w-4xl leading-relaxed"
+                        className="
+                mt-8
+                max-w-4xl
+                text-gray-200
+                leading-relaxed
+                text-[clamp(1.1rem,2vw,1.6rem)]
+            "
                     >
                         We design and implement ERPNext systems that unify operations and
                         deliver data you can trust.
                     </motion.p>
 
-                    {/* ===== CTA TENGAH ===== */}
+                    {/* ===== CTA ===== */}
                     <motion.div variants={buttonPop} className="mt-10">
                         <button
                             onClick={() => goToLogin(router)}
-                            className="flex items-center gap-2 rounded-full px-6 py-3 bg-orange-600 hover:bg-orange-700 transition text-white font-semibold"
+                            className="
+                    flex items-center gap-2
+                    rounded-full
+                    px-7 py-3
+                    bg-orange-600
+                    hover:bg-orange-700
+                    transition
+                    text-white
+                    font-semibold
+                "
                         >
                             Request Free Consultation & Demo
                             <Image
@@ -105,6 +127,7 @@ const Header = () => {
                     </motion.div>
                 </motion.div>
             </div>
+
 
             {/* ================= STICKY CONTACT BUTTON ================= */}
             <motion.button
