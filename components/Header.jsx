@@ -69,7 +69,7 @@ const Header = () => {
                     variants={container}
                     initial="hidden"
                     animate="show"
-                    className="max-w-5xl"
+                    className="max-w-5xl lg:mt-10"
                 >
                     {/* ===== HERO TITLE ===== */}
                     <motion.h1
