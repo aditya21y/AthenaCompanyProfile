@@ -36,4 +36,4 @@ COPY --from=builder /app/next.config.mjs ./next.config.mjs
 EXPOSE 3000
 
 # Start with PM2 (auto-restart if crash)
-CMD ["pm2-runtime", "npm", "--name", "nextjs", "--", "start"]
+CMD ["npm", "start"]
